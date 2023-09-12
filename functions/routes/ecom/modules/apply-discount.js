@@ -244,6 +244,12 @@ exports.post = ({ appSdk, admin }, req, res) => {
             }
           })
           const fixedSubtotal = subtotal - value
+          if (storeId == 1131) {
+            console.log('subtotal fixed', fixedSubtotal)
+            console.log('value', value)
+            console.log('value', JSON.stringify(rule))
+            console.log('value', JSON.stringify(rule))
+          }
           if (!bestRule || value > discountValue || bestRule.min_subtotal < rule.min_subtotal) {
             if (!(rule.min_subtotal > fixedSubtotal)) {
               bestRule = rule
